@@ -1,0 +1,20 @@
+language: python
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
+    - python: 3.6
+
+notifications:
+  email: false
+
+install:
+- pip install -U -e .[test]
+
+script:
+- flake8 --config=.flake8 cytoolz-stubs
+
+cache:
+  directories:
+  - "$HOME/.cache/pip"
