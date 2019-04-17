@@ -10,10 +10,10 @@ notifications:
   email: false
 
 install:
-- pip install -U -e .[test]
+  - make setup
 
 script:
-- flake8 --config=.flake8 cytoolz-stubs
+  - make release-check
 
 cache:
   directories:
